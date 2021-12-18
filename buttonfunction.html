@@ -702,6 +702,8 @@
                 account = accounts[0];
                 document.getElementById('wallet-address').textContent = account;
                 var amount = Number(document.querySelector("[name=amount").value);
+                var total = amount * 50000000000000000;
+                console.log(total, amount);
                 contract = new web3.eth.Contract(ABI, ADDRESS);
                 document.getElementById('mint').onclick = () =>{
                     contract.methods.mint(amount).send({ from: account, value:(50000000000000000*amount),totalGasLimit :21000});
