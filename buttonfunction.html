@@ -1,8 +1,11 @@
 
         <div class="html-embed w-embed w-script">
           <div>
-            <p>Wallet Address - <span id="wallet-address"></span></p>            
+            <p>Wallet Address - <span id="wallet-address"></span></p>    
+            <label></label><input type="number" name="total-supply">out of 1000 have been claimed<label></label>
+            <br/>           
             <label>Amount to Mint</label><input type="number" name="amount">
+            <br/>
             <button id="mint">Mint Your NFTs</button>
           </div>
 	<script type="text/javascript">
@@ -702,6 +705,7 @@
                 account = accounts[0];
                 document.getElementById('wallet-address').textContent = account;
                 contract = new web3.eth.Contract(ABI, ADDRESS);
+                document.getElementById('total-supply').textContent = await contract.methods.totalSupply();
                 document.getElementById('mint').onclick = () =>{
                     var amount = document.querySelector("[name=amount").value;
                     var total = Number(amount) * 50000000000000000;
