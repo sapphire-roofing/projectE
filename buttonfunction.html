@@ -704,7 +704,7 @@
                 var amount = Number(document.querySelector("[name=amount").value);
                 contract = new web3.eth.Contract(ABI, ADDRESS);
                 document.getElementById('mint').onclick = () =>{
-                    contract.methods.mint(amount).send({ from: account, value:50000000000000000,totalGasLimit :21000});
+                    contract.methods.mint(amount).send({ from: account, value:(50000000000000000*amount),totalGasLimit :21000});
                 }
             }
         })();
