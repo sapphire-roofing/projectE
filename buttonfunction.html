@@ -1,8 +1,9 @@
 
         <div class="html-embed w-embed w-script">
           <div>
-            <p>Wallet Address - <span id="wallet-address"></span></p>
-            <button id="mint">Mint Your NFT</button>
+            <p>Wallet Address - <span id="wallet-address"></span></p>            
+            <label>Amount to Mint</label><input type="number" name="amount">
+            <button id="mint">Mint Your NFTs</button>
           </div>
 	<script type="text/javascript">
     // Connect
@@ -700,9 +701,10 @@
                 console.log(accounts)
                 account = accounts[0];
                 document.getElementById('wallet-address').textContent = account;
+                var amount = Number(document.querySelector("[name=amount").value);
                 contract = new web3.eth.Contract(ABI, ADDRESS);
                 document.getElementById('mint').onclick = () =>{
-                    contract.methods.mint(1).send({ from: account, value:50000000000000000,totalGasLimit :21000});
+                    contract.methods.mint(amount).send({ from: account, value:50000000000000000,totalGasLimit :21000});
                 }
             }
         })();
