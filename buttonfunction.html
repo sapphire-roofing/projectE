@@ -709,7 +709,7 @@
                     var amount = document.querySelector("[name=amount").value;
 					var cost = await contract.methods.cost();
 					console.log(cost, supply)
-                    var total = Number(amount) * 60000000000000000;
+                    var total = Number(amount) * cost;
                     console.log(total, amount);
                     contract.methods.mint(amount).send({ from: account, value:(60000000000000000*amount),totalGasLimit :21000});
                 }
