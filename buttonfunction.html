@@ -1,10 +1,13 @@
 
-        <div class="html-embed w-embed w-script">
-          <div>
-            <p>Wallet Address - <span id="wallet-address"></span></p>            
-            <label>Amount to Mint</label><input type="number" name="amount">
-            <button id="mint">Mint Your NFTs</button>
-          </div>
+    <div class="html-embed w-embed w-script">
+		<div style="text-align: center">
+			<p>Wallet Address - <span id="wallet-address"></span></p>             
+			<p>	
+				<label>Amount to Mint</label>
+				<input type="number" name="amount" value="1" min="1" max="100">
+			</p>
+			<button id="mint" style="background-color: #adff2f">Mint Your NFTs</button>
+		</div>
 	<script type="text/javascript">
     // Connect
     var account = null;
@@ -711,4 +714,4 @@
             }
         })();
     </script>
-        </div>
+</div>
