@@ -709,11 +709,9 @@
 				var cost = await contract.methods.cost().call();
 				var supply = await contract.methods.totalSupply().call();
                 document.getElementById('mint').onclick = () =>{
-                    var amount = document.querySelector("[name=amount").value;
-					console.log(cost, supply)
-                    var total = Number(amount) * cost;
-                    console.log(total, amount);
-                    contract.methods.mint(amount).send({ from: account, value:(60000000000000000*amount),totalGasLimit :21000});
+                    var amount = document.querySelector("[name=amount").value; 
+                    var total = Number(amount) * cost; 
+                    contract.methods.mint(amount).send({ from: account, value:total,totalGasLimit :21000});
                 }
             }
         })();
