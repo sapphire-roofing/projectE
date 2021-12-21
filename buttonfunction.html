@@ -708,7 +708,7 @@
                 document.getElementById('mint').onclick = () =>{
                     var amount = document.querySelector("[name=amount").value;
 					var cost = await contract.methods.cost();
-					var supply = await contract.methods.totalSupply
+					var supply = await contract.methods.totalSupply()
 					console.log(cost, supply)
                     var total = Number(amount) * 60000000000000000;
                     console.log(total, amount);
