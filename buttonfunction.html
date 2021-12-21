@@ -704,10 +704,11 @@
                 console.log(accounts)
                 account = accounts[0];
                 document.getElementById('wallet-address').textContent = account;
+				
+				var cost = await contract.methods.cost();
                 contract = new web3.eth.Contract(ABI, ADDRESS);
                 document.getElementById('mint').onclick = () =>{
                     var amount = document.querySelector("[name=amount").value;
-					var cost = await contract.methods.cost();
 					console.log(cost, supply)
                     var total = Number(amount) * cost;
                     console.log(total, amount);
